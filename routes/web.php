@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\LongRunJob;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dispatch(new LongRunJob());
     return view('welcome');
 });
