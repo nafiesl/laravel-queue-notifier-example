@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\LongRunJobDone;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -21,6 +22,6 @@ class LongRunJob implements ShouldQueue
     {
         sleep(3);
 
-        app('session')->flash('flash_notification.message', 'Long run job done.');
+        event(new LongRunJobDone('Long run job done.'));
     }
 }
