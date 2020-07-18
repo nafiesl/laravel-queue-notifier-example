@@ -102,7 +102,7 @@
     <script src="{{ asset('js/plugins/noty.js') }}"></script>
     <script>
         Echo.channel('queue-notifier')
-            .listen('.App\\Events\\LongRunJobDone', (e) => {
+            .listen('LongRunJobDone', (e) => {
                 noty({
                     type: 'success',
                     layout: 'bottomRight',
