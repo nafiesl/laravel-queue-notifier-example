@@ -103,7 +103,12 @@
     <script>
         Echo.channel('queue-notifier')
             .listen('.App\\Events\\LongRunJobDone', (e) => {
-                console.log(e);
+                noty({
+                    type: 'success',
+                    layout: 'bottomRight',
+                    text: e.message,
+                    timeout: 5000
+                });
             });
     </script>
     @if (Session::has('flash_notification.message'))

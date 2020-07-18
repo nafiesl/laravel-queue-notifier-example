@@ -20,8 +20,9 @@ class LongRunJob implements ShouldQueue
      */
     public function handle()
     {
-        sleep(3);
+        $seconds = 5;
+        sleep($seconds);
 
-        event(new LongRunJobDone('Long run job done.'));
+        event(new LongRunJobDone('Long run job done after '.$seconds.' seconds.'));
     }
 }

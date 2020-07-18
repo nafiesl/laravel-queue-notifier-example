@@ -30,7 +30,7 @@ window.Echo = new Echo({
     disableStats: false
 });
 
-Pusher.log = function(message)
-{
-    window.console.log(message)
-}
+// Pusher.log = function(message)
+// {
+//     window.console.log(message)
+// }
