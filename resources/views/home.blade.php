@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <hr>
+                    <a href="{{ route('long-run-job') }}" class="btn btn-success">Run a long job</a>
                 </div>
             </div>
         </div>

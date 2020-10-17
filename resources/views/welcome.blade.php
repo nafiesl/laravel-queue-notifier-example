@@ -97,28 +97,4 @@
             </div>
         </div>
     </body>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/noty.js') }}"></script>
-    <script>
-        Echo.channel('queue-notifier')
-            .listen('LongRunJobDone', (e) => {
-                noty({
-                    type: 'success',
-                    layout: 'bottomRight',
-                    text: e.message,
-                    timeout: false
-                });
-            });
-    </script>
-    @if (Session::has('flash_notification.message'))
-    <script>
-        noty({
-            type: 'success',
-            layout: 'bottomRight',
-            text: '{{ Session::get('flash_notification.message') }}',
-            timeout: 5000
-        });
-    </script>
-    @endif
 </html>

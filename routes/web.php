@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dispatch(new LongRunJob());
     return view('welcome');
 });
+
+Route::get('/long-run-job', function () {
+    dispatch(new LongRunJob());
+
+    flash('Please wait, your request is processing...');
+    return redirect()->home();
+})->name('long-run-job');
 
 Auth::routes();
 
