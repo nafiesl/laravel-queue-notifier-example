@@ -107,7 +107,7 @@
                     type: 'success',
                     layout: 'bottomRight',
                     text: e.message,
-                    timeout: 5000
+                    timeout: false
                 });
             });
     </script>
