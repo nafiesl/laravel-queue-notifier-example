@@ -23,6 +23,8 @@ class LongRunJob implements ShouldQueue
         $seconds = 5;
         sleep($seconds);
 
-        event(new LongRunJobDone('Long run job done after '.$seconds.' seconds.'));
+        $link = '<a href="'.route('home').'">here</a>';
+        event(new LongRunJobDone('Long run job done after '.$seconds.' seconds. Please check '.$link.'.'));
+        info('Long run job done after '.$seconds.' seconds. Please check '.$link.'.');
     }
 }
