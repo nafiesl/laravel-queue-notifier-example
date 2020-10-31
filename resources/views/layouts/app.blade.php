@@ -93,6 +93,15 @@
                     timeout: false
                 });
             });
+        Echo.private('App.User.{{ auth()->id() }}')
+            .listen('LongRunPrivateJobDone', (e) => {
+                noty({
+                    type: 'success',
+                    layout: 'bottomRight',
+                    text: e.message,
+                    timeout: false
+                });
+            });
     </script>
     @if (Session::has('flash_notification.message'))
     <script>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Jobs\LongRunJob;
+use App\Jobs\LongRunPrivateJob;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,13 @@ Route::get('/long-run-job', function () {
     flash('Please wait, your request is processing...');
     return redirect()->home();
 })->name('long-run-job');
+
+Route::get('/private-long-run-job', function () {
+    dispatch(new LongRunPrivateJob(auth()->id()));
+
+    flash('Please wait, your request is processing...');
+    return redirect()->home();
+})->name('private-long-run-job');
 
 Auth::routes();
 
