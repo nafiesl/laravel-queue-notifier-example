@@ -4,7 +4,7 @@ This is a sample project for implementing realtime feature for laravel using the
 
 1. Laravel websockets (https://github.com/beyondcode/laravel-websockets)
 2. Laravel Echo (https://github.com/laravel/echo)
-3. Noty JS (https://ned.im/noty)
+3. Noty JS (https://ned.im/noty/v2)
 
 ## Features
 
@@ -47,13 +47,14 @@ This project is just an example impelemntation, so we will have:
     - Don't refresh the page, just wait...
     - After 5 seconds, both John and David will get a notifier message `Long run job done after 5 seconds`
     - John and David get the notifier, because this is a public channel for all users.
-6. When David hits the **Run a long job** button, same behavior on point #5 happen for David.
+6. When David hits the **Run a long job** button, the same behavior on point #5 happens for David.
 7. When David hits the **Run a long private job** button
     - David will be redirected back to home
     - Davil will get a notifier message on the bottom right `Please wait, your request is processing...`.
     - Don't refresh the page, just wait...
     - After 5 seconds, both David will get a notifier message `Long run private job (for '...') done after 5 seconds`
     - John will not get the notifier, because this is a private channel for David.
+8. When John hits the **Run a long private job** button, the same behavior on point #7 happens for John.
 
 ## License
 
